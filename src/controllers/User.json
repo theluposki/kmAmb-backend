@@ -1,0 +1,18 @@
+[
+    {
+        "regisster": {
+            "nome":"João",
+            "cnh":"123456789011",
+            "vencimentoCnh":"25/05/2021",
+            "matricula":"12345",
+            "email":"joao@mail.com",
+            "password":"123",
+            "createDateAt":"06/12/2020",
+            "createTimeAt":"23:10"
+        },
+        "auth": {
+            "email":"joao@mail.com",
+            "password":"123"
+        }
+    }
+]
