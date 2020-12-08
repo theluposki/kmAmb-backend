@@ -18,3 +18,7 @@
   ```bash 
     $ nano .env
   ```
+
+  demonstração
+
+  ![.env](readme-files/imgEnv.png)
