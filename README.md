@@ -22,3 +22,9 @@
   demonstração
 
   ![.env](readme-files/imgEnv.png)
+
+  altere as variaveis de ambiente.
+
+    ```environment
+     DB_HOST=mongodb://localhost:27017/nomedobanco
+    ```
