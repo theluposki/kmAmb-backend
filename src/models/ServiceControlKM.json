@@ -1,0 +1,21 @@
+{
+    "motorista": {
+        "id": "5fcf1b0690a4a68367566f65",
+        "nome": "Bianca de Alcantra da silva",
+        "cnh": "123456789011",
+        "vencimentoCnh": "25/05/2022",
+        "matricula": "123456"
+    },
+    "hrEmitido": "04:45",
+    "dtEmitido": "06/12/2020",
+
+    "prefixo": "651",
+    "kmEntrada": "123400",
+    "kmSaida": "123550",
+    "hPerSaida": "04:45",
+    "hCarregamento": "04:45",
+    "hFechamentoNF": "04:45",
+    "hPerVolta": "04:45",
+    "hDescarregamento": "04:45",
+    "hFechamentoTicket": "04:45"
+}

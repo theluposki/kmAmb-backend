@@ -1,4 +1,5 @@
 const User = require("../models/User.js");
+
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authConfig = require("../config/auth.json");
@@ -59,7 +60,7 @@ exports.findOneId = async (id) => {
 
 exports.update = async (id, body) => {
   const { nome, cnh, vencimentoCnh, matricula } = body
-  console.log(nome)
+
   return await User.findOneAndUpdate(
     { _id: id },
     { 
