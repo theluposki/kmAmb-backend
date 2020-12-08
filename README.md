@@ -25,4 +25,4 @@
 
   altere as variaveis de ambiente.
 
-     ``` DB_HOST=mongodb://localhost:27017/nomedobanco ```
+     ` DB_HOST=mongodb://localhost:27017/nomedobanco `
