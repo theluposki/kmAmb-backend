@@ -44,10 +44,21 @@ exports.auth = async (req, res) => {
     }    
 }
 
-exports.update = (req, res) => {
-    res.status(200).json({ id: req.params.id, user: req.body })
+exports.update = async (req, res) => {
+    try {
+        const user = await UserRepository.update(req.params.id, req.body)
+
+        res.status(200).json({ user })
+    } catch (e) {
+        res.status(400).json({ error: `Ouve um erro ao atualizar usuário > [${e}]` })
+    }
 }
 
-exports.delete = (req, res) => {
-    res.status(200).json({ user: req.params.id })
+exports.delete = async (req, res) => {
+    try {
+        await UserRepository.delete(req.params.id)
+        res.status(200).json({ message: 'Deletado com sucesso.' })
+    } catch (e) {
+        res.status(400).json({ error: `Erro ao deletar usuário.  > [${e}]`})
+    }
 }
