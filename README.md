@@ -11,3 +11,10 @@
 
    $ npm start
 ```
+### configurações
+
+  é necessario configura o arquivo ```.env```
+
+  ```bash 
+    $ nano .env
+  ```
