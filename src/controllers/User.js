@@ -11,8 +11,13 @@ exports.findAll = async (req, res) => {
     }
 }
 
-exports.findOneId = (req, res) => {
-    res.status(200).json({ id: req.params.id })
+exports.findOneId = async (req, res) => {
+    try {
+        const user = await UserRepository.findOneId(req.params.id)
+        res.status(200).json({ user })
+    } catch (e) {
+        res.status(400).json({ error: `erro ao deletar o usuário > [${e}]`})
+    }
 }
 
 exports.register = async (req, res) => {

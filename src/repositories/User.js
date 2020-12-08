@@ -49,6 +49,12 @@ exports.find = async () => {
   return await User.find();
 };
 
+/** Buscar Um Usuários por Id */
+
+exports.findOneId = async (id) => {
+  return await User.findOne({ _id: id });
+};
+
 /** Atualizar Usuário > [ nome, cnh, vencimentoCnh, matricula ] */
 
 exports.update = async (id, body) => {
