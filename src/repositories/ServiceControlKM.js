@@ -27,17 +27,20 @@ exports.update = async (id, body) => {
     hDescarregamento,
     hFechamentoTicket,
   } = body;
-  return await controlKMModel.findOneAndUpdate({ _id: id }, { 
-    prefixo,
-    kmEntrada,
-    kmSaida,
-    hPerSaida,
-    hCarregamento,
-    hFechamentoNF,
-    hPerVolta,
-    hDescarregamento,
-    hFechamentoTicket,
-   });
+  return await controlKMModel.findOneAndUpdate(
+    { _id: id },
+    {
+      prefixo,
+      kmEntrada,
+      kmSaida,
+      hPerSaida,
+      hCarregamento,
+      hFechamentoNF,
+      hPerVolta,
+      hDescarregamento,
+      hFechamentoTicket,
+    }
+  );
 };
 /** DELETE */
 exports.delete = async (id) => {
