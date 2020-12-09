@@ -2,14 +2,15 @@ const express = require("express");
 const router = express.Router();
 
 const ServiceControlKMController = require("../controllers/ServiceControlKM.js");
+const auth = require('../middlewares/auth.js')
 
 /** CREATE*/
-router.post("/controlKM", ServiceControlKMController.create);
+router.post("/controlKM", auth.authorize, ServiceControlKMController.create);
 /** READ */
-router.get("/controlKM", ServiceControlKMController.findAll);
+router.get("/controlKM", auth.isAdmin, ServiceControlKMController.findAll);
 /** UPDATE */
-router.put("/controlKM/update/:id", ServiceControlKMController.update);
+router.put("/controlKM/update/:id", auth.isAdmin, ServiceControlKMController.update);
 /** DELETE */
-router.delete("/controlKM/delete/:id", ServiceControlKMController.delete);
+router.delete("/controlKM/delete/:id", auth.isAdmin, ServiceControlKMController.delete);
 
 module.exports = router;

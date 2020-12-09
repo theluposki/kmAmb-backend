@@ -32,6 +32,12 @@ const UserSchema = new Schema({
     createTimeAt:{
         type: String,
     },
+    roles: [{
+        type: String,
+        required: true,
+        enum: ['user','admin'],
+        default: 'user'
+    }]
 })
 
 

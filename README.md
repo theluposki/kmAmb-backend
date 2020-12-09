@@ -68,7 +68,7 @@
   ```bash
       /users
   ```
-  se tudo estiver correto recebera um json devolvento os usuários.
+  se tudo estiver correto recebera um json devolvendo os usuários.
 
   ```json
       {
@@ -105,7 +105,7 @@
   ```bash
       /user/<id>
   ```
-    se tudo estiver correto recebera um json devolvento o usuário.
+    se tudo estiver correto recebera um json devolvendo o usuário.
 
   ```json
     {
@@ -144,7 +144,7 @@
     }
   ``` 
 
-  se tudo estiver correto recebera um json devolvento o usuário criado.
+  se tudo estiver correto recebera um json devolvendo o usuário criado.
 
   ```json
     {
@@ -180,7 +180,7 @@
     }
   ``` 
 
-  se tudo estiver correto recebera um json devolvento o usuário autenticado.
+  se tudo estiver correto recebera um json devolvendo o usuário autenticado.
 
   ```json
     {
@@ -219,7 +219,7 @@
     }
   ``` 
 
-  se tudo estiver correto recebera um json devolvento o usuário atualizado.
+  se tudo estiver correto recebera um json devolvendo o usuário atualizado.
 
   ```json
     {
@@ -243,7 +243,166 @@
   ```bash
       /user/delete/<id>
   ```
-  se tudo estiver correto recebera um json devolvento uma mensagem.
+  se tudo estiver correto recebera um json devolvendo uma mensagem.
+
+  ```json
+    {
+        "message": "Deletado com sucesso."
+    }
+  ```
+
+#### Rotas do controle de serviço
+
+<b>Buscar todos os serviços</b>
+    Para buscar todos os serviços basta fazer uma requisição do tipo `GET` nesse endpoint.
+
+  ```bash
+      /controlKM
+  ```
+  se tudo estiver correto recebera um json devolvendo os serviços.
+
+  ```json
+    {
+      "services": [
+        {
+          "_id": "5fcf2f9da90dfasqw94210cd936",
+          "motorista": {
+            "id": "5fcf1b0690a4a6asjkkaw28367566f65",
+            "nome": "Bianca de Alcantra da silva",
+            "cnh": "123456789011",
+            "vencimentoCnh": "25/05/2022",
+            "matricula": "123456"
+          },
+          "hrEmitido": "04:45",
+          "dtEmitido": "06/12/2020",
+          "prefixo": "659",
+          "kmEntrada": "123400",
+          "kmSaida": "123550",
+          "hPerSaida": "04:45",
+          "hCarregamento": "04:45",
+          "hFechamentoNF": "04:45",
+          "hPerVolta": "04:45",
+          "hDescarregamento": "04:45",
+          "hFechamentoTicket": "04:45",
+          "__v": 0
+        },
+        {
+          "_id": "5fcf2f9da90dfasqw94210cd936",
+          "motorista": {
+            "id": "5fcf1b0690a4a6asjkkaw28367566f65",
+            "nome": "Bianca de Alcantra da silva",
+            "cnh": "123456789011",
+            "vencimentoCnh": "25/05/2022",
+            "matricula": "123456"
+          },
+          "hrEmitido": "04:45",
+          "dtEmitido": "06/12/2020",
+          "prefixo": "651",
+          "kmEntrada": "123550",
+          "kmSaida": "123650",
+          "hPerSaida": "04:45",
+          "hCarregamento": "04:45",
+          "hFechamentoNF": "04:45",
+          "hPerVolta": "04:45",
+          "hDescarregamento": "04:45",
+          "hFechamentoTicket": "04:45",
+          "__v": 0
+        }
+      ]
+    }
+  ``` 
+
+<b>Registrar um serviço</b>
+    Para registrar um serviço basta fazer uma requisição do tipo `POST` nesse endpoint.
+
+  ```bash
+      /controlKM
+  ```
+  enviando o seguinte json no body
+
+  ```json
+    {
+        "motorista": {
+            "id": "5fcf1b0690a4a6asjkkaw28367566f65",
+            "nome": "Bianca de Alcantra da silva",
+            "cnh": "123456789011",
+            "vencimentoCnh": "25/05/2022",
+            "matricula": "123456"
+        },
+        "hrEmitido": "04:45",
+        "dtEmitido": "06/12/2020",
+
+        "prefixo": "651",
+        "kmEntrada": "123550",
+        "kmSaida": "123650",
+        "hPerSaida": "04:45",
+        "hCarregamento": "04:45",
+        "hFechamentoNF": "04:45",
+        "hPerVolta": "04:45",
+        "hDescarregamento": "04:45",
+        "hFechamentoTicket": "04:45"
+    }
+  ``` 
+
+  se tudo estiver correto recebera um json devolvendo o usuário criado.
+
+  ```json
+    {
+      "service": {
+        "_id": "5fd0b42458c4bf1f73912475",
+        "motorista": {
+          "id": "5fcf1b0690a4a6asjkkaw28367566f65",
+          "nome": "Bianca de Alcantra da silva",
+          "cnh": "123456789011",
+          "vencimentoCnh": "25/05/2022",
+          "matricula": "123456"
+        },
+        "hrEmitido": "04:45",
+        "dtEmitido": "06/12/2020",
+        "prefixo": "651",
+        "kmEntrada": "123550",
+        "kmSaida": "123650",
+        "hPerSaida": "04:45",
+        "hCarregamento": "04:45",
+        "hFechamentoNF": "04:45",
+        "hPerVolta": "04:45",
+        "hDescarregamento": "04:45",
+        "hFechamentoTicket": "04:45",
+        "__v": 0
+      }
+    }
+  ``` 
+
+  <b>Atualizar um serviço</b>
+    Para Atualizar um serviço basta fazer uma requisição do tipo `PUT` nesse endpoint passando o id como parametro.
+
+  ```bash
+      /controlKM/update/<id>
+  ```
+  enviando o seguinte json no body
+  
+  ```json
+    {
+        "prefixo": "659",
+        "kmEntrada": "123400",
+        "kmSaida": "123550",
+        "hPerSaida": "04:45",
+        "hCarregamento": "04:45",
+        "hFechamentoNF": "04:45",
+        "hPerVolta": "04:45",
+        "hDescarregamento": "04:45",
+        "hFechamentoTicket": "04:45"
+    }
+
+  ``` 
+
+<b>Deletar um serviço</b>
+    Para Deletar um serviço basta fazer uma requisição do tipo `DELETE` nesse endpoint passando o id como parametro.
+
+  ```bash
+      /controlKM/delete/<id>
+  ```
+  se tudo estiver correto recebera um json devolvendo uma mensagem.
 
   ```json
     {

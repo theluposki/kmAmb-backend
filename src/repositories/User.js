@@ -4,8 +4,13 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authConfig = require("../config/auth.json");
 
-const generateToken = async (id) => {
-  const token = await jwt.sign({ id: id }, authConfig.secret, {
+const generateToken = async (id, nome, email , roles) => {
+  const token = await jwt.sign({ 
+    id,
+    nome,
+    email,
+    roles 
+  }, authConfig.secret, {
     expiresIn: 86400,
   });
   return token;
@@ -41,7 +46,7 @@ exports.auth = async (email, password) => {
 
   //user.password = undefined
 
-  return { user, token: await generateToken(user.id) };
+  return { user, token: await generateToken(user.id, user.nome, user.email, user.roles) };
 };
 
 /** Buscar Todos Usuários */
