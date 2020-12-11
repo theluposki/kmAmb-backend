@@ -64,7 +64,7 @@ exports.findOneId = async (id) => {
 /** Atualizar Usuário > [ nome, cnh, vencimentoCnh, matricula ] */
 
 exports.update = async (id, body) => {
-  const { nome, cnh, vencimentoCnh, matricula } = body
+  const { nome, cnh, vencimentoCnh, matricula, email, roles } = body
 
   return await User.findOneAndUpdate(
     { _id: id },
@@ -72,7 +72,9 @@ exports.update = async (id, body) => {
         nome: nome,
         cnh: cnh,
         vencimentoCnh: vencimentoCnh,
-        matricula: matricula
+        matricula: matricula,
+        email: email,
+        roles: roles
     }
   );
 };
