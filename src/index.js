@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
@@ -14,4 +15,4 @@ app.use(require('./routes/ServiceControlKM.js'))
 
 app.get('/', (req, res) => res.status(200).json({server: 'ok'}))
 
-app.listen(3000, () => console.log('app running http://localhost:3000'))
+app.listen(process.env.PORT, () => console.log(`app running http://localhost:${process.env.PORT}`))
